@@ -1,0 +1,143 @@
+
+
+* {
+    margin: 0%;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-size: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ccc;
+}
+
+h2{
+    margin-bottom: 10px;
+}
+
+
+section {
+    padding: 100px 0;
+    background-color: #ccc;
+}
+
+
+
+.contato .contato-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.contato .contato-content .form-container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 800px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.contato .contato-content .form-container button {
+    display: inline-block;
+    background: #000000;
+    color: #ddd;
+    font-size: 20px;
+    padding: 10px 10px;
+    font-weight: bold;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: 2px solid #ffffff;
+    width: 300px;
+}
+
+.contato .contato-content .form-container button:hover {    
+    background: #ff0101;
+
+}
+
+
+
+.contato .contato-content .form-container input {
+    width: 300px;
+    border-top: #ccc;
+    border-left: #ffffff;
+    border-right: #ffffff;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+    
+}
+
+
+table {
+    
+    background-color:#ffffff;
+    margin: auto;
+  }
+
+  tr {
+    
+    box-shadow: 0px 5px 10px rgb(0, 0, 0);
+    
+    
+  }
+  
+  td {
+    
+    font-weight: bold;
+    padding: 10px 100px 10px 100px;
+    margin:0px;
+    
+  }
+  
+  button:hover{
+    transform: scale(1.10); 
+
+  }
+
+  @media (max-width: 600px) {
+    .contato .contato-content .form-container {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .contato .contato-content .form-container button {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .contato .contato-content .form-container input {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    }
+
+    img{
+        width: 50;
+        height: 50;
+    }
+    
+    td {
+    padding: 5px;
+    font-size: 14px;
+    text-align: center;
+    }
+    }
