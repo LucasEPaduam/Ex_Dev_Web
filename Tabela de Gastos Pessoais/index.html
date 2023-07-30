@@ -1,0 +1,56 @@
+<!DOCTYPE html lang="en">
+
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+
+    <title>Ex_Aula_9</title>
+</head>
+
+<body>
+    <section class="contato" id="contato">
+        <div class="max-width">
+            <div class="contato-content">
+                <div class="form-container">
+                    <h2 class="title">Orçamento</h2><br><br>
+                    <label for="conta">Conta</label>
+                    <input id="conta" name="conta" required><br><br>
+                    <label for="valor">Valor</label>
+                    <input id="valor" name="valor" required><br><br>
+                    <label for="tipo">Tipo</label>
+                    <select id="tipo" name="tipo" required>
+                        <option value="" selected disabled hidden>Selecione</option>
+                        <option value="Entrada">Entrada</option>
+                        <option value="Saída">Saída</option>
+                    </select><br><br>
+                    <label for="exibirValorTotal">Valor Total</label>
+                    <textarea id="exibirValorTotal" name="exibirValorTotal"></textarea><br><br>
+                    <button type="submit" onclick="enviarDados()">Enviar</button>
+                </div>
+            </div><br>
+            <hr><br>
+            <div>
+                <table id="myTable">
+                    <thead>
+                        <tr>
+                            <th>Conta</th>
+                            <th>Tipo</th>
+                            <th>Valor</th>
+                            <th>Remover</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+    </section>
+
+
+
+    <script src="./scripts/main.js"></script>
+
+</body>
+
+</html>
