@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo de Dropdown List com Estados e Cidades do Brasil</title>
+</head>
+
+<body>
+    <h1>Selecione um Estado e uma Cidade do Brasil</h1>
+
+    <label for="estados">Estados:</label>
+    <select id="estados" onchange="buscarCidades()">
+        <option value="">Selecione um estado</option>
+    </select>
+
+    <label for="cidades">Cidades:</label>
+    <select id="cidades">
+        <option value="">Selecione um estado primeiro</option>
+    </select>
+
+    <script>
+        // URL da API do IBGE
+        const urlEstados = "https://servicodados.ibge.gov.br/api/v1/localidades/estados";
+        // Função para buscar os estados e populá-los no dropdown list
+        function buscarEstados() {
+            const estadosSelect = document.getElementById("estados");
+
+
+            fetch(urlEstados)
+                .then(response => response.json())
+                .then(estados => {
+                    estados.forEach(estado => {
+                        const option = document.createElement("option");
+                        option.value = estado.id;
+                        option.text = estado.sigla + " - " + estado.nome;
+                        estadosSelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.log(error));
+        }
+
+        // Função para buscar as cidades de um estado e populá-las no dropdown list
+        function buscarCidades() {
+            const estadosSelect = document.getElementById("estados");
+            const cidadesSelect = document.getElementById("cidades");
+
+            // Limpa as cidades do dropdown list
+            cidadesSelect.innerHTML = "";
+            const option = document.createElement("option");
+            option.value = "";
+            option.text = "Selecione um estado primeiro";
+            cidadesSelect.appendChild(option);
+            console.log(estadosSelect.value);
+            // Se não tiver selecionado nenhum estado, não faz nada
+            if (estadosSelect.value === "") {
+                return;
+            }
+
+            // URL da API do IBGE para buscar as cidades do estado selecionado
+            const urlCidades = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estadosSelect.value}/municipios`;
+
+            fetch(urlCidades)
+                .then(response => response.json())
+                .then(cidades => {
+                    cidades.forEach(cidade => {
+                        const option = document.createElement("option");
+                        option.value = cidade.nome;
+                        option.text = cidade.nome;
+                        cidadesSelect.appendChild(option);
+                        console.log(estadosSelect.value);
+                    });
+                })
+                .catch(error => console.log(error));
+        }
+
+        // Ao carregar a página, busca os estados e popula o dropdown list
+        buscarEstados();
+
+    </script>
+</body>
+
+</html>
