@@ -1,0 +1,44 @@
+<!DOCTYPE html lang="en">
+
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">    
+
+    <title>Ex_Aula_8</title>
+</head>
+
+<body>
+   
+
+    <section class="contato" id="contato">
+        <div class="max-width">
+            <div class="contato-content">
+                <div class="form-container">
+                    <label for="animal_inicio">Inclui animal no início</label>
+                    <input id="animal_inicio" name="animal_inicio"><button type="submit" onclick="inputInicio()">Enviar</button><br><br>
+                    <hr><br>
+                    <label for="animal_fim">Inclui animal no fim</label>
+                    <input id="animal_fim" name="animal_fim"><button type="submit" onclick="inputFim()">Enviar</button><br><br>
+                    <hr><br>
+                    <label for="animal_remove_inicio">Remove animal do início</label>
+                    <button type="submit" onclick="removeInit()">Enviar</button><br><br>
+                    <hr><br>
+                    <label for="animal_remove_fim">Remove animal do fim</label>
+                    <button type="submit" onclick="removeEnd()">Enviar</button><br><br>
+                    <hr><br>
+                    <button type="submit" onclick="exibir()">Exibe animal aleatório</button>
+                    <textarea id="exibir" name="exibir"></textarea><br><br>
+                </div>
+            </div>                            
+    </section>
+
+
+    <script src="./scripts/main.js"></script>
+    
+</body>
+
+</html>
